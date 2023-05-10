@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "vnetName": {
+        "value": "fg28int-vnet"
+      },
+      "vnetAddressPrefix": {
+        "value": "10.0.0.0/16"
+      },
+      "subnetName": {
+        "value": "fg28subnetint"
+      },
+      "subnetAddressPrefix": {
+        "value": "10.0.0.0/24"
+      },
+      "vaultName": {
+        "value": "fg28keyvaultint"
+      },
+      "skuName": {
+        "value": "standard"
+      }
+    }
+  }
