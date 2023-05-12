@@ -20,8 +20,22 @@ New-AzResourceGroupDeployment `
   New-AzResourceGroupDeployment `
   -TemplateFile D:\Users\fgomezguzman\Documents\IAC\Bicep\ExamplesBicep\Arch\AME\CentralUs\prd\main.bicep `
   -TemplateParameterFile D:\Users\fgomezguzman\Documents\IAC\Bicep\ExamplesBicep\Arch\AME\CentralUs\prd\ame.parameters.prd.json `
-  -ResourceGroupName "bicep-test-prd" `
+  -ResourceGroupName "bicep-test-int" `
   -WhatIf
+
+  New-AzResourceGroupDeployment `
+  -TemplateFile D:\Users\fgomezguzman\Documents\IAC\Bicep\ExamplesBicep\Arch\AME\CentralUs\int\main.bicep `
+  -TemplateParameterFile D:\Users\fgomezguzman\Documents\IAC\Bicep\ExamplesBicep\Arch\AME\CentralUs\int\ame.parameters.int.json `
+  -ResourceGroupName "bicep-test-int"
+
+  New-AzResourceGroupDeployment `
+  -TemplateFile D:\Users\fgomezguzman\Documents\IAC\Bicep\ExamplesBicep\Arch\AME\EastUs2\dev\main.bicep `
+  -TemplateParameterFile D:\Users\fgomezguzman\Documents\IAC\Bicep\ExamplesBicep\Arch\AME\EastUs2\dev\ame.parameters.dev.json `
+  -ResourceGroupName "bicep-test-dev"
+
+  az bicep decompile --file 
+
+  az bicep build --file D:\Users\fgomezguzman\Documents\IAC\Bicep\ExamplesBicep\Arch\AME\CentralUs\prd\main.bicep --outfile hola.json
 
   #deploy registry
   az deployment group create --resource-group "bicep-test" --template-file registry.bicep 
@@ -29,8 +43,13 @@ New-AzResourceGroupDeployment `
 
   
   #publish module
-  az bicep publish --file D:\Users\fgomezguzman\Documents\IAC\Bicep\ExamplesBicep\Arch\Modules\networking\main.bicep --target br:acrza66tl3ac6laq.azurecr.io/bicep/modules/networking:1.0.0 
-  az bicep publish --file D:\Users\fgomezguzman\Documents\IAC\Bicep\ExamplesBicep\Arch\Modules\keyvaults\main.bicep --target br:acrza66tl3ac6laq.azurecr.io/bicep/modules/keyvaults:1.0.0
+  az bicep publish --file D:\Users\fgomezguzman\Documents\IAC\Bicep\ExamplesBicep\Arch\Modules\networking\main.bicep --target br:acrza66tl3ac6laq.azurecr.io/bicep/modules/networking:1.0.1 
+  az bicep publish --file D:\Users\fgomezguzman\Documents\IAC\Bicep\ExamplesBicep\Arch\Modules\keyvaults\main.bicep --target br:acrza66tl3ac6laq.azurecr.io/bicep/modules/keyvaults:1.0.1
 
+  Publish-AzBicepModule -FilePath D:\Users\fgomezguzman\Documents\IAC\Bicep\ExamplesBicep\Arch\Modules\keyvaults\main.bicep -Target br:acrza66tl3ac6laq.azurecr.io/bicep/modules/keyvaults:1.0.0
 
+  Publish-AzBicepModule -FilePath D:\Users\fgomezguzman\Documents\IAC\Bicep\ExamplesBicep\Arch\Modules\networking\main.bicep -Target br:acrza66tl3ac6laq.azurecr.io/bicep/modules/networking:1.0.0
   az acr show --resource-group "bicep-test" --name acrza66tl3ac6laq --query loginServer
+
+
+  az bicep decompile --file bicep-test-prd.json

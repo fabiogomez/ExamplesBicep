@@ -6,7 +6,7 @@ param vaultName string
 param location string = resourceGroup().location
 param skuName string 
 
-module networking 'br:acrza66tl3ac6laq.azurecr.io/bicep..//modules/networking:1.0.0' = {
+module networking 'br:acrza66tl3ac6laq.azurecr.io/bicep/modules/networking:1.0.1' = {
   name: 'networking'
   params: {
     vnetName: vnetName
@@ -17,7 +17,7 @@ module networking 'br:acrza66tl3ac6laq.azurecr.io/bicep..//modules/networking:1.
   }
 }
 
-module keyVaults 'br:acrza66tl3ac6laq.azurecr.io/bicep/modules/keyvaults:1.0.0' = {
+module keyVaults 'br:acrza66tl3ac6laq.azurecr.io/bicep/modules/keyvaults:1.0.1' = {
   name: 'keyVaults'
   params: {
     vaultName: vaultName

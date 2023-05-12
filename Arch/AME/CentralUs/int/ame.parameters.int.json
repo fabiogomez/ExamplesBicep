@@ -6,13 +6,13 @@
         "value": "fg28int-vnet"
       },
       "vnetAddressPrefix": {
-        "value": "10.0.0.0/16"
+        "value": "10.1.0.0/16"
       },
       "subnetName": {
         "value": "fg28subnetint"
       },
       "subnetAddressPrefix": {
-        "value": "10.0.0.0/24"
+        "value": "10.1.1.0/24"
       },
       "vaultName": {
         "value": "fg28keyvaultint"

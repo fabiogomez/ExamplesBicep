@@ -85,4 +85,5 @@ resource appServicePlan 'Microsoft.Web/serverFarms@2020-06-01' = {
   }
 }
 
+
 output proxyKey object = key.properties

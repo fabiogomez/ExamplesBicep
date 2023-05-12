@@ -1,0 +1,26 @@
+PRD 
+module       version
+keyvaults    1.0.0
+networking   1.0.0
+apps         1.0.0
+DW 1.1.2    -> hfjshfgjsdh
+
+INT 
+module       version
+keyvaults    1.1.0
+networking   1.1.0
+apps         1.0.0
+DW  1.1.0
+
+
+DEV 
+module       version
+keyvaults    2.1.0
+networking   2.1.0
+apps         1.0.0
+DW           1.1.0
+
+
+DW 1.1.0
+30 key vaults stoarge databaseAccounts topics
+azure frondor

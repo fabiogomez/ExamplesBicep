@@ -21,6 +21,14 @@ resource subnet 'Microsoft.Network/virtualNetworks/subnets@2021-02-01' = {
   name: subnetName
   properties: {
     addressPrefix: subnetAddressPrefix
+    serviceEndpoints: [
+      {
+        service: 'Microsoft.KeyVault'
+        locations: [
+          'WestEurope '
+        ]
+      }
+    ]
     
   }
 }
